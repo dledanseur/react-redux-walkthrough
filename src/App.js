@@ -6,11 +6,12 @@ import './App.css';
 import { Home } from './Home';
 import { UserPage } from './modules/users/pages/user-list.page';
 import { Provider } from 'react-redux';
-import { createStore } from 'redux';
+import { createStore, applyMiddleware } from 'redux';
 import rootReducer from './modules/reducers';
+import thunk from 'redux-thunk';
 
 const initialState = {};
-const store = createStore(rootReducer, initialState);
+const store = createStore(rootReducer, initialState, applyMiddleware(thunk));
 
 class App extends Component {
   render() {
