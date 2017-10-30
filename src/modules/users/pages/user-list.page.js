@@ -1,20 +1,8 @@
 import React from 'react';
+import UserListContainer from '../containers/user-list.container';
 
 export let UserPage = (props) => {
  return (
-    <table>
-      <thead>
-        <tr>
-          <th>Name</th>
-          <th>Email</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td>name</td>
-          <td>email</td>
-        </tr>
-      </tbody>
-    </table>
+    <UserListContainer />
   )
 }
