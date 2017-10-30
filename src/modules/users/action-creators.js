@@ -17,4 +17,21 @@ let load_users = () => {
   }
 }
 
-export { load_users };
+let saveUser = (history, values) => {
+  return (dispatch) => {
+    axios.post('http://demo7403400.mockable.io/users', values).then( users => {
+      
+      history.push("/users");
+      dispatch({
+        type: action_types.USER_SAVED,
+        user: values
+      })
+      
+    }).catch( (e) => {
+      console.log(e);
+    })
+  }
+}
+
+
+export { load_users, saveUser };
